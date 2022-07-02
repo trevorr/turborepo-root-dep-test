@@ -1,0 +1,10 @@
+{
+  "name": "@test/app1",
+  "scripts": {
+    "build": "echo 'Building app1'",
+    "generate": "mkdir -p src/__generated__ && cp ../lib/src/__generated__/file.txt src/__generated__/file.txt"
+  },
+  "dependencies": {
+    "@test/lib": "workspace:*"
+  }
+}

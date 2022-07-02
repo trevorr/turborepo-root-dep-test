@@ -1,0 +1,29 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "baseBranch": "origin/master",
+  "pipeline": {
+    "//#generate-shared1": {
+      "inputs": [],
+      "outputs": ["packages/shared/src/__generated__/file.txt"]
+    },
+    "//#generate-shared2": {
+      "dependsOn": ["//#generate-shared1"],
+      "inputs": ["packages/shared/src/__generated__/file.txt"],
+      "outputs": ["packages/lib/src/__generated__/file.txt"]
+    },
+    "generate": {
+      "dependsOn": ["//#generate-shared2"],
+      "inputs": ["../lib/src/__generated__/file.txt"],
+      "outputs": ["src/__generated__/file.txt"]
+    },
+    "build": {
+      "dependsOn": ["^build", "generate"],
+      "inputs": ["src/**"],
+      "outputs": ["dist/**"]
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": []
+    }
+  }
+}

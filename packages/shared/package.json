@@ -1,0 +1,6 @@
+{
+  "name": "@test/shared",
+  "scripts": {
+    "build": "echo 'Building shared'"
+  }
+}

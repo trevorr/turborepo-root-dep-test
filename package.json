@@ -1,0 +1,13 @@
+{
+  "name": "test",
+  "scripts": {
+    "build": "turbo run build",
+    "build-app1": "turbo run build --filter=app1...",
+    "build-app2": "turbo run build --filter=app2...",
+    "generate-shared1": "mkdir -p packages/shared/src/__generated__ && echo 'generated' > packages/shared/src/__generated__/file.txt",
+    "generate-shared2": "mkdir -p packages/lib/src/__generated__ && cp packages/shared/src/__generated__/file.txt packages/lib/src/__generated__/file.txt"
+  },
+  "devDependencies": {
+    "turbo": "1.3.1"
+  }
+}

@@ -1,0 +1,4 @@
+__generated__
+.turbo
+dist
+node_modules
